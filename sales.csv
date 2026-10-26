@@ -1,5 +1,5 @@
-Customer,Product,Price,Quantity
-Sarah Johns,Shoes,60,3
-Mike Brown,Hat,15,1
-John Smith,Shirt,20,2
-John Smith,Shirt,20,3
+Customer,Product,Price,Quantity,Product_cost
+Sarah Johns,Shoes,60,3,15
+Mike Brown,Hat,15,1,7
+John Smith,Shirt,20,2,5
+John Smith,Shirt,20,3,5

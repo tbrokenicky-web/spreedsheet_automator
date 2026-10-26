@@ -15,13 +15,22 @@ with open("sales.csv", "r", newline="") as file:
 
     print("Column names:", reader.fieldnames)
 
+    total_profit = 0
+
     for row in reader:
         customer = str(row["Customer"])
         product = str(row["Product"])
         price = float(row["Price"])
         quantity = int(row["Quantity"])
+        product_cost = float(row["Product_cost"])
 
         total = price * quantity
+        
+        
+
+        profit_per_person = total - (product_cost * quantity)
+        total_profit += profit_per_person
+                
         # if the customer is in seen list it adds it to duplicate 
         if customer in seen_customer:
             duplicate_customer.add(customer)
@@ -30,9 +39,12 @@ with open("sales.csv", "r", newline="") as file:
         
             
         if customer not in duplicate_customer:
-             print(f"{customer}: {total}")
+             print(f"{customer}: {total}, profit: {profit_per_person}")
         else:
             print("found duplicate" + str(duplicate_customer))
+print(total_profit)   
+
+        
 
 
 
